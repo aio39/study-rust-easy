@@ -1,25 +1,20 @@
 fn main() {
-    let my_number /*  middle comment  */ = 100; // Rust always chooses i32 for integers. if you don't tell it to use a different type 
-    println!("{}", my_number as u8 as char ) ; //  100  -> d (unicode)
-    
-    let u8_number :u8 = 100;
-    println!("{}", u8_number  ) ;  // 100
+    // 타입은 지정하지 않아도 자동으로 된다.
+    //  정수는 기본적으로 i32
+    let small_number: u8 = 10;
+    let small_number2 = 10u8; // 숫자 뒤에 타입 지정해도됨
+    let big_number = 100_000_000_i32; // _는 무시됨.
 
-    // usize is used to represent the size of a memory
-    // 또한 index에서도 사용.  32비트 컴퓨터에서는 64비트 주소를 사용 할수 없으니 usize (양수의 32비트 or 64비트)
+    // let my_float = 5.;  // .를 붙이면 float로 인식  float는 f32, f64(기본)
+    let my_float: f64 = 5.0; // This is an f64
+    let my_other_float: f32 = 8.5; // This is an f32 , f32와 f64는 더 할수 없다.
 
-    // chars use 4 bytes, 각 char에 맞게 최소 사이즈만 사용.
-    println!("Size of a char: {}", std::mem::size_of::<char>()); // 4 bytes
-    println!("Size of string containing 'a': {}", "a".len()); // .len() gives the size of the string in bytes
-    println!("Size of string containing 'ß': {}", "ß".len());
-    println!("Size of string containing '国': {}", "国".len());
-    println!("Size of string containing '𓅱': {}", "𓅱".len());
+    let third_float = my_float + my_other_float as f64; // I can casting 
 
+    // Rust 컴파일러가 자동으로 추측해서 my_other_float를 f32로 인식해줌. 기본은 f64이지만
+    let my_float: f32 = 5.0;
+    let my_other_float = 8.5; // Usually Rust would choose f64,
+    let third_float = my_float + my_other_float; 
 
-    let slice = "Hello!";
-    println!("Slice is {} bytes and also {} characters.", slice.len(), slice.chars().count());
-    let slice2 = "안녕!";
-    println!("Slice2 is {} bytes but only {} characters.", slice2.len(), slice2.chars().count());
-
-    
+    println!("{}", third_float);
 }
