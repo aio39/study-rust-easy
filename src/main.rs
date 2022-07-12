@@ -1,23 +1,60 @@
+fn main() {
+    let doesnt_print = ();
+    println!("This will not print: {:?}", doesnt_print); // Debug
+    println!("This will not print: {:#?}", doesnt_print); // pretty-print
 
-fn number() -> i32 {
-    8 // ; 가 없어야함.
+    // print vs println
+    print!("This will not print a new line");
+    println!(" so this will be on the same line");
+
+    println!(
+        "The smallest i8 is {} and the biggest i8 is {}.",
+        i8::MIN,
+        i8::MAX
+    ); // hint: printing std::i8::MIN means "print MIN inside of the i8 section in the standard library"
+    println!(
+        "The smallest u8 is {} and the biggest u8 is {}.",
+        u8::MIN,
+        u8::MAX
+    );
+    println!(
+        "The smallest i16 is {} and the biggest i16 is {}.",
+        i16::MIN,
+        i16::MAX
+    );
+    println!(
+        "The smallest u16 is {} and the biggest u16 is {}.",
+        u16::MIN,
+        u16::MAX
+    );
+    println!(
+        "The smallest i32 is {} and the biggest i32 is {}.",
+        i32::MIN,
+        i32::MAX
+    );
+    println!(
+        "The smallest u32 is {} and the biggest u32 is {}.",
+        u32::MIN,
+        u32::MAX
+    );
+    println!(
+        "The smallest i64 is {} and the biggest i64 is {}.",
+        i64::MIN,
+        i64::MAX
+    );
+    println!(
+        "The smallest u64 is {} and the biggest u64 is {}.",
+        u64::MIN,
+        u64::MAX
+    );
+    println!(
+        "The smallest i128 is {} and the biggest i128 is {}.",
+        i128::MIN,
+        i128::MAX
+    );
+    println!(
+        "The smallest u128 is {} and the biggest u128 is {}.",
+        u128::MIN,
+        u128::MAX
+    );
 }
-
-fn multiply(number_one: i32, number_two: i32) { // Two i32s will enter the function. We will call them number_one and number_two.
-    let result = number_one * number_two;
-    println!("{} times {} is {}", number_one, number_two, result);
-}
-
-fn main() { // code block start
-    println!("Hello, world! {}", number()); // println is a macro  , ! is means that it is a macro
-    multiply(3, 5);
-
-    let my_number = {
-    let second_number = 8;
-        second_number + 9 // No semicolon ;, so the code block returns 8 + 9.
-                          // It works just like a function
-    };
-
-    println!("My number is: {}", my_number);
-} 
-
