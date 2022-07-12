@@ -12,3 +12,5 @@
 - declare a variable
 - binding
 - shadowing
+- stack
+- heap
