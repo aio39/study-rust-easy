@@ -10,4 +10,5 @@
 - macro
 - skinny arrow
 - declare a variable
--
+- binding
+- shadowing
