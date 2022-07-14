@@ -14,3 +14,5 @@
 - shadowing
 - stack
 - heap
+- hexadecimal
+-
